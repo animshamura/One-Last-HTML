@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GUB Faculty Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .faculty-card {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: left;
+      transition: transform 0.3s ease;
+      width: 100%;
+      max-width: 180px;
+    }
+
+    .faculty-card img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .faculty-card img:active {
+      transform: scale(1.2);
+      z-index: 10;
+    }
+
+    .description {
+      margin-top: 10px;
+      font-size: 15px;
+      text-align: left;
+    }
+
+    .btn {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 6px 10px;
+      font-size: 14px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    @media (max-width: 1000px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>GUB Faculty Gallery</h1>
+  <div class="gallery">
+    <!-- Repeat this block for all 12 faculty members -->
+    <div class="faculty-card">
+      <img src="1.png" alt="Faculty 1">
+      <div class="description">
+        <strong>Dr. Muhammad Aminur Rahman</strong><br>
+        Chairperson, CSE<br>
+        aminur@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="faculty-card">
+      <img src="2.jpg" alt="Faculty 2">
+      <div class="description">
+        <strong>Mohammad Ehsan Shahmi Chowdhury</strong><br>
+        Associate Professor, CSE<br>
+        ehsan@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="faculty-card">
+      <img src="3.jpg" alt="Faculty 3">
+      <div class="description">
+        <strong>Humayan Kabir Rana</strong><br>
+        Associate Professor, CSE<br>
+        humayan@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="faculty-card">
+      <img src="4.jpg" alt="Faculty 4">
+      <div class="description">
+        <strong>Tanpia Tasnim</strong><br>
+       Lecturer & PC (EV)<br>
+        tanpia@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="faculty-card">
+      <img src="5.jpg" alt="Faculty 5">
+      <div class="description">
+        <strong>Feroza Naznin</strong><br>
+        Associate Professor, CSE<br>
+        feroza@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="faculty-card">
+      <img src="6.jpg" alt="Faculty 6">
+      <div class="description">
+        <strong>Md. Abu Rumman Refat</strong><br>
+        Associate Professor, CSE<br>
+        refat@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="faculty-card">
+      <img src="7.jpg" alt="Faculty 7">
+      <div class="description">
+        <strong>Md Zahid Hasan</strong><br>
+        Lecturer<br>
+        zahid@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="faculty-card">
+      <img src="8.jpg" alt="Faculty 8">
+      <div class="description">
+        <strong>Md. Shakhaouth Hossain</strong><br>
+        Lecturer<br>
+        shakhaouth@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+   
+
+    <div class="faculty-card">
+      <img src="9.jpg" alt="Faculty 10">
+      <div class="description">
+        <strong>Shamima Islam</strong><br>
+        Lecturer<br>
+        shamima@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="faculty-card">
+      <img src="10.jpg" alt="Faculty 11">
+      <div class="description">
+        <strong>Syed Ahsanul Kabir</strong><br>
+        Associate Chairperson<br>
+        kabir@cse.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+ <div class="faculty-card">
+      <img src="11.jpg" alt="Faculty 9">
+      <div class="description">
+        <strong>Prof. Dr. Md. Fayzur Rahman</strong><br>
+        Professor<br>
+        drfayzur@eee.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="faculty-card">
+      <img src="12.jpg" alt="Faculty 12">
+      <div class="description">
+        <strong>Aklima Akter</strong><br>
+      Lecturer<br>
+        aklima@eng.green.edu.bd
+      </div>
+      <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <!-- Add 10 more similar cards with different images and data -->
+    <!-- ... -->
+  </div>
+</body>
+</html>

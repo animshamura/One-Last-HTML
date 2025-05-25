@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Binary Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    .calculator h1 {
+      margin-bottom: 20px;
+    }
+
+    #display {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      margin-bottom: 15px;
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    .buttons button {
+      width: 60px;
+      height: 40px;
+      margin: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      transition: 0.2s;
+    }
+
+    .buttons button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Binary Calculator</h1>
+    <input type="text" id="display" readonly>
+
+    <div class="buttons">
+      <button onclick="append('0')">0</button>
+      <button onclick="append('1')">1</button>
+      <button onclick="append('+')">+</button>
+      <button onclick="append('-')">-</button>
+      <button onclick="append('*')">*</button>
+      <button onclick="append('/')">/</button>
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    function append(char) {
+      document.getElementById("display").value += char;
+    }
+
+    function clearDisplay() {
+      document.getElementById("display").value = '';
+    }
+
+    function calculate() {
+      const input = document.getElementById("display").value;
+
+      const pattern = /^([01]+)([\+\-\*\/])([01]+)$/;
+      const match = input.match(pattern);
+      if (!match) {
+        alert("Invalid input!");
+        return;
+      }
+
+      const num1 = parseInt(match[1], 2);
+      const operator = match[2];
+      const num2 = parseInt(match[3], 2);
+      let result;
+
+      switch (operator) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          if (num2 === 0) {
+            alert("Division by zero!");
+            return;
+          }
+          result = Math.floor(num1 / num2);
+          break;
+        default:
+          alert("Unknown operator");
+          return;
+      }
+
+      document.getElementById("display").value = result.toString(2);
+    }
+  </script>
+</body>
+</html>
